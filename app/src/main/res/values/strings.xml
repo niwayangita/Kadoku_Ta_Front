@@ -1,0 +1,31 @@
+<resources>
+    <string name="app_name">Kadoku_Ta</string>
+
+    <string-array name="momen">
+        <item>Ulang Tahun</item>
+        <item>Wisuda</item>
+        <item>Pernikahan</item>
+    </string-array>
+
+    <string-array name="hobi">
+        <item>Ulang Tahun</item>
+        <item>Wisuda</item>
+        <item>Pernikahan</item>
+    </string-array>
+
+    <string-array name="rentang_umur">
+        <item>Remaja</item>
+        <item>Dewasa</item>
+        <item>Lansia</item>
+    </string-array>
+    <string name="title_activity_extraversion">ExtraversionActivity</string>
+    <!-- Strings used for fragments for navigation -->
+    <string name="first_fragment_label">First Fragment</string>
+    <string name="second_fragment_label">Second Fragment</string>
+    <string name="next">Next</string>
+    <string name="previous">Previous</string>
+
+    <string name="hello_first_fragment">Hello first fragment</string>
+    <string name="hello_second_fragment">Hello second fragment. Arg: %1$s</string>
+    <string name="title_activity_agreeableness">AgreeablenessActivity</string>
+</resources>

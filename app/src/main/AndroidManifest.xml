@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.kadoku_ta">
+    <!--    tag izin internet-->
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="Aplikasi Rekomendasi Kadoku"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/Theme.Kadoku_Ta">
+        <activity android:name=".TermActivity"></activity>
+        <activity android:name=".HasilActivity" />
+        <activity android:name=".OpennessActivity" />
+        <activity android:name=".NeuroticismActivity" />
+        <activity android:name=".ConscientiousnessActivity" />
+        <activity
+            android:name=".AgreeablenessActivity"
+            android:label="@string/title_activity_agreeableness"
+            android:theme="@style/Theme.Kadoku_Ta.NoActionBar" />
+        <activity
+            android:name=".ExtraversionActivity"
+            android:label="@string/title_activity_extraversion"
+            android:theme="@style/Theme.Kadoku_Ta.NoActionBar" />
+        <activity android:name=".RekomendasiActivity" />
+        <activity android:name=".MainActivity">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+
+        <meta-data
+            android:name="preloaded_fonts"
+            android:resource="@array/preloaded_fonts" />
+    </application>
+
+</manifest>
