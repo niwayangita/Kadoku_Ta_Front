@@ -148,6 +148,8 @@ class AgreeablenessActivity : AppCompatActivity() {
             intent.putExtra("crispAgree", totalAgree)
             startActivity(intent)
 
+            
+
         }
     }
 }

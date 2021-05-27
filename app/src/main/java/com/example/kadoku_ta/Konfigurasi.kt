@@ -3,7 +3,7 @@ package com.example.kadoku_ta
 class Konfigurasi {
 
     //url sesuai dengan IP Address laptop
-    val URL_INFERENSI: String = "http://192.168.43.5/apikado/tampilPgw.php"
+    val URL_FUZZY: String = "http://192.168.1.117/Apikadoku_TA/public/api/fuzzy"
 
     val KEY_EMP_ID : String = "idaturanB5"
     val KEY_EMP_EXTRA : String = "extra"

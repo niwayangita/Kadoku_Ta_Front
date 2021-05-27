@@ -6,8 +6,13 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.RadioGroup
 import android.widget.Toast
+import com.android.volley.Request
+import com.android.volley.Response
+import com.android.volley.toolbox.StringRequest
+import com.android.volley.toolbox.Volley
 
 class OpennessActivity : AppCompatActivity() {
+    val Konfigurasi = Konfigurasi()
     companion object{
         var O1 = 0
         var O2 = 0
@@ -152,6 +157,27 @@ class OpennessActivity : AppCompatActivity() {
             intent.putExtra("crispOpen", totalOpen)
             startActivity(intent)
 
+            val q = Volley.newRequestQueue(this)
+            val url = Konfigurasi.URL_FUZZY
+
+            var stringRequest = object: StringRequest(
+                Request.Method.POST, url,
+                Response.Listener<String> {},
+                Response.ErrorListener {} )
+            {
+                //input data Mahasiswa ke database
+                override fun getParams(): Map<String, String> {
+                    val params = HashMap<String, String>()
+                    params.put("crispExtra", crispExtra.toString())
+                    params.put("crispAgree", crispAgree.toString())
+                    params.put("crispCons", crispCons.toString())
+                    params.put("crispNeuro", crispNeuro.toString())
+                    params.put("crispOpen", totalOpen.toString())
+                    return params
+                }
+            }
+            //eksekusi untuk melakukan insert database
+            q.add(stringRequest)
         }
     }
 }
