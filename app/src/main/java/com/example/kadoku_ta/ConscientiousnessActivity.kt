@@ -134,7 +134,6 @@ class ConscientiousnessActivity : AppCompatActivity() {
             intent.putExtra("crispAgree", crispAgree)
             intent.putExtra("crispCons", totalCons)
             startActivity(intent)
-
         }
 
 

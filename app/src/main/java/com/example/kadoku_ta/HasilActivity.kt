@@ -26,6 +26,7 @@ class HasilActivity : AppCompatActivity() {
         val crispCons = intent.getIntExtra("crispCons",0)
         val crispNeuro = intent.getIntExtra("crispNeuro",0)
         val crispOpen = intent.getIntExtra("crispOpen",0)
+        val baru = intent.getStringExtra("baru")
 
         val extra = findViewById<TextView>(R.id.textViewExtra)
         extra.text = "Extraversion: " + crispExtra.toString()
@@ -207,74 +208,11 @@ class HasilActivity : AppCompatActivity() {
         val tampilOpenRendah = findViewById<TextView>(R.id.textViewRendah)
         val tampilOpenSedang = findViewById<TextView>(R.id.textViewSedang)
         val tampilOpenTinggi = findViewById<TextView>(R.id.textViewTinggi)
+        val cek = findViewById<TextView>(R.id.textView15)
 
         tampilOpenRendah.text = dk_rendahO.toString()
         tampilOpenSedang.text = dk_sedangO.toString()
         tampilOpenTinggi.text = dk_tinggiO.toString()
-
-
-
+        cek.text = baru
     }
-
-    private fun showData() {
-        var jsonObject: JSONObject? = null
-        val list = ArrayList<HashMap<String, String?>>()
-        try {
-            jsonObject = JSONObject(JSON_STRING)
-            val result = jsonObject.getJSONArray(Konfigurasi.TAG_JSON_ARRAY)
-            for (i in 0 until result.length()) {
-                val jo = result.getJSONObject(i)
-                val id = jo.getString(Konfigurasi.TAG_ID)
-                val extra = jo.getString(Konfigurasi.TAG_EXTRA)
-
-                val users = HashMap<String, String?>()
-                users[Konfigurasi.TAG_ID] = id
-                users[Konfigurasi.TAG_EXTRA] = extra
-                list.add(users)
-            }
-        } catch (e: JSONException) {
-            e.printStackTrace()
-        }
-//            val adapter: ListAdapter = SimpleAdapter(
-//                this@MainActivity,
-//                list,
-//                R.layout.list_view,
-//                arrayOf(Konfigurasi.TAG_ID, Konfigurasi.TAG_EXTRA),
-//                intArrayOf(R.id.idaturanB5, R.id.extra)
-//            )
-//            listView!!.adapter = adapter
-    }
-
-    private val jSON: Unit
-        private get() {
-            class GetJSON :
-                AsyncTask<Void?, Void?, String?>() {
-                var loading: ProgressDialog? = null
-                override fun onPreExecute() {
-                    super.onPreExecute()
-                    loading = ProgressDialog.show(
-                        this@HasilActivity,
-                        "Mengambil Data",
-                        "Mohon Tunggu...",
-                        false,
-                        false
-                    )
-                }
-
-                override fun onPostExecute(s: String?) {
-                    super.onPostExecute(s)
-                    loading!!.dismiss()
-                    JSON_STRING = s
-                    showData()
-                }
-
-                override fun doInBackground(vararg params: Void?): String? {
-                    val rh = RequestHandler()
-                    return rh.sendGetRequest(Konfigurasi.URL_INFERENSI)
-                }
-            }
-
-            val gj = GetJSON()
-            gj.execute()
-        }
 }

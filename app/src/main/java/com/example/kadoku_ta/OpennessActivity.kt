@@ -10,6 +10,7 @@ import com.android.volley.Request
 import com.android.volley.Response
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
+import org.json.JSONObject
 
 class OpennessActivity : AppCompatActivity() {
     val Konfigurasi = Konfigurasi()
@@ -147,6 +148,38 @@ class OpennessActivity : AppCompatActivity() {
             Toast.makeText(applicationContext, totalOpen.toString(),
                 Toast.LENGTH_SHORT).show()
 
+            val q = Volley.newRequestQueue(this)
+            val url = "http://192.168.1.117/Apikadoku_TA/public/api/fuzzy"
+
+            var baru = ""
+
+            var stringRequest = object: StringRequest(
+                Request.Method.POST, url,
+                Response.Listener<String>{ response->
+                    try {
+                        baru = "HALO"
+                    }
+                    catch (e: Exception) { // caught while parsing the response
+                        e.printStackTrace()
+                    }
+
+                },
+                Response.ErrorListener {} )
+                {
+                    //input data Mahasiswa ke database
+                    override fun getParams(): Map<String, String> {
+                        val params = HashMap<String, String>()
+                        params.put("crispExtra", crispExtra.toString())
+                        params.put("crispAgree", crispAgree.toString())
+                        params.put("crispCons", crispCons.toString())
+                        params.put("crispNeuro", crispNeuro.toString())
+                        params.put("crispOpen", totalOpen.toString())
+                        return params
+                    }
+                }
+            //eksekusi untuk melakukan insert database
+            q.add(stringRequest)
+
             val intent = Intent(this, HasilActivity::class.java)
             intent.putExtra("jk", jk)
             intent.putExtra("hobi", hobi)
@@ -155,29 +188,10 @@ class OpennessActivity : AppCompatActivity() {
             intent.putExtra("crispCons", crispCons)
             intent.putExtra("crispNeuro", crispNeuro)
             intent.putExtra("crispOpen", totalOpen)
+            intent.putExtra("baru", baru)
             startActivity(intent)
 
-            val q = Volley.newRequestQueue(this)
-            val url = Konfigurasi.URL_FUZZY
 
-            var stringRequest = object: StringRequest(
-                Request.Method.POST, url,
-                Response.Listener<String> {},
-                Response.ErrorListener {} )
-            {
-                //input data Mahasiswa ke database
-                override fun getParams(): Map<String, String> {
-                    val params = HashMap<String, String>()
-                    params.put("crispExtra", crispExtra.toString())
-                    params.put("crispAgree", crispAgree.toString())
-                    params.put("crispCons", crispCons.toString())
-                    params.put("crispNeuro", crispNeuro.toString())
-                    params.put("crispOpen", totalOpen.toString())
-                    return params
-                }
-            }
-            //eksekusi untuk melakukan insert database
-            q.add(stringRequest)
         }
     }
 }
