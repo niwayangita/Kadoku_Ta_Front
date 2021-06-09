@@ -136,20 +136,49 @@ class NeuroticismActivity : AppCompatActivity() {
 
         val btnNext = findViewById<Button>(R.id.buttonNextOpen)
 
-        btnNext.setOnClickListener{
-            var totalNeuro = N1+N2+N3+N4+N5+N6+N7+N8
-            Toast.makeText(applicationContext, totalNeuro.toString(),
-                    Toast.LENGTH_SHORT).show()
+        btnNext.setOnClickListener {
+            if (radioN1.checkedRadioButtonId == -1) {
+                Toast.makeText(getApplicationContext(), "Nomor 1 belum diisi", Toast.LENGTH_SHORT)
+                    .show();
+            } else if (radioN2.checkedRadioButtonId == -1) {
+                Toast.makeText(getApplicationContext(), "Nomor 2 belum diisi", Toast.LENGTH_SHORT)
+                    .show();
+            } else if (radioN3.checkedRadioButtonId == -1) {
+                Toast.makeText(getApplicationContext(), "Nomor 3 belum diisi", Toast.LENGTH_SHORT)
+                    .show();
+            } else if (radioN4.checkedRadioButtonId == -1) {
+                Toast.makeText(getApplicationContext(), "Nomor 4 belum diisi", Toast.LENGTH_SHORT)
+                    .show();
+            } else if (radioN5.checkedRadioButtonId == -1) {
+                Toast.makeText(getApplicationContext(), "Nomor 5 belum diisi", Toast.LENGTH_SHORT)
+                    .show();
+            } else if (radioN6.checkedRadioButtonId == -1) {
+                Toast.makeText(getApplicationContext(), "Nomor 6 belum diisi", Toast.LENGTH_SHORT)
+                    .show();
+            } else if (radioN7.checkedRadioButtonId == -1) {
+                Toast.makeText(getApplicationContext(), "Nomor 7 belum diisi", Toast.LENGTH_SHORT)
+                    .show();
+            }
+            else if (radioN8.checkedRadioButtonId == -1) {
+                Toast.makeText(getApplicationContext(), "Nomor 8 belum diisi", Toast.LENGTH_SHORT)
+                    .show();
+            }else {
+                var totalNeuro = N1 + N2 + N3 + N4 + N5 + N6 + N7 + N8
+                Toast.makeText(
+                    applicationContext, totalNeuro.toString(),
+                    Toast.LENGTH_SHORT
+                ).show()
 
-            val intent = Intent(this, OpennessActivity::class.java)
-            intent.putExtra("jk", jk)
-            intent.putExtra("hobi", hobi)
-            intent.putExtra("crispExtra", crispExtra)
-            intent.putExtra("crispAgree", crispAgree)
-            intent.putExtra("crispCons", crispCons)
-            intent.putExtra("crispNeuro", totalNeuro)
-            startActivity(intent)
+                val intent = Intent(this, OpennessActivity::class.java)
+                intent.putExtra("jk", jk)
+                intent.putExtra("hobi", hobi)
+                intent.putExtra("crispExtra", crispExtra)
+                intent.putExtra("crispAgree", crispAgree)
+                intent.putExtra("crispCons", crispCons)
+                intent.putExtra("crispNeuro", totalNeuro)
+                startActivity(intent)
 
+            }
         }
     }
 }

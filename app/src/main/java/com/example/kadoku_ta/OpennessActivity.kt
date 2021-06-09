@@ -3,13 +3,17 @@ package com.example.kadoku_ta
 import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
+import android.util.Log
 import android.widget.Button
+import android.widget.RadioButton
 import android.widget.RadioGroup
 import android.widget.Toast
 import com.android.volley.Request
 import com.android.volley.Response
 import com.android.volley.toolbox.StringRequest
 import com.android.volley.toolbox.Volley
+import org.json.JSONArray
+
 import org.json.JSONObject
 
 class OpennessActivity : AppCompatActivity() {
@@ -144,27 +148,68 @@ class OpennessActivity : AppCompatActivity() {
         val btnNext = findViewById<Button>(R.id.buttonHasil)
 
         btnNext.setOnClickListener{
-            var totalOpen = O1+O2+O3+O4+O5+O6+O7+O8
-            Toast.makeText(applicationContext, totalOpen.toString(),
-                Toast.LENGTH_SHORT).show()
+            if(radioO1.checkedRadioButtonId ==-1){
+                Toast.makeText(getApplicationContext(), "Nomor 1 belum diisi", Toast.LENGTH_SHORT).show();
+            }
 
-            val q = Volley.newRequestQueue(this)
-            val url = "http://192.168.1.117/Apikadoku_TA/public/api/fuzzy"
+            else if(radioO2.checkedRadioButtonId ==-1) {
+                Toast.makeText(getApplicationContext(), "Nomor 2 belum diisi", Toast.LENGTH_SHORT)
+                    .show();
+            }
 
-            var baru = ""
+            else if(radioO3.checkedRadioButtonId ==-1){
+                Toast.makeText(getApplicationContext(), "Nomor 3 belum diisi", Toast.LENGTH_SHORT).show();
+            }
 
-            var stringRequest = object: StringRequest(
-                Request.Method.POST, url,
-                Response.Listener<String>{ response->
-                    try {
-                        baru = "HALO"
-                    }
-                    catch (e: Exception) { // caught while parsing the response
-                        e.printStackTrace()
-                    }
+            else if(radioO4.checkedRadioButtonId ==-1){
+                Toast.makeText(getApplicationContext(), "Nomor 4 belum diisi", Toast.LENGTH_SHORT).show();
+            }
 
-                },
-                Response.ErrorListener {} )
+            else if(radioO5.checkedRadioButtonId ==-1){
+                Toast.makeText(getApplicationContext(), "Nomor 5 belum diisi", Toast.LENGTH_SHORT).show();
+            }
+
+            else if(radioO6.checkedRadioButtonId ==-1){
+                Toast.makeText(getApplicationContext(), "Nomor 6 belum diisi", Toast.LENGTH_SHORT).show();
+            }
+
+            else if(radioO7.checkedRadioButtonId ==-1){
+                Toast.makeText(getApplicationContext(), "Nomor 7 belum diisi", Toast.LENGTH_SHORT).show();
+            }
+
+            else if(radioO8.checkedRadioButtonId ==-1){
+                Toast.makeText(getApplicationContext(), "Nomor 8 belum diisi", Toast.LENGTH_SHORT).show();
+            }
+
+            else{
+                var totalOpen = O1+O2+O3+O4+O5+O6+O7+O8
+                Toast.makeText(applicationContext, totalOpen.toString(),
+                    Toast.LENGTH_SHORT).show()
+
+                val q = Volley.newRequestQueue(this)
+                val url = "http://192.168.1.117/Apikadoku_TA/public/api/fuzzy"
+
+                var baru = ""
+                var kat = ""
+
+                var stringRequest = object: StringRequest(
+                    Request.Method.POST, url,
+                    Response.Listener<String>{ response->
+                        try {
+                            val object_ = JSONObject(response)
+                            kat = object_.getString("kategori")
+//                            val ambil = jsonArray.getString("kategori")//kurung kurawal json array
+                            //Log.d("test", kat)
+//                            Log.d("yow", "masuk try yo")
+                        }
+                        catch (e: Exception) { // caught while parsing the response
+                            e.printStackTrace()
+                            print("gagal")
+                            Log.e("bakaka", "gagal wkwk")
+                        }
+
+                    },
+                    Response.ErrorListener {} )
                 {
                     //input data Mahasiswa ke database
                     override fun getParams(): Map<String, String> {
@@ -177,21 +222,27 @@ class OpennessActivity : AppCompatActivity() {
                         return params
                     }
                 }
-            //eksekusi untuk melakukan insert database
-            q.add(stringRequest)
+                //eksekusi untuk melakukan insert database
+                q.add(stringRequest)
 
-            val intent = Intent(this, HasilActivity::class.java)
-            intent.putExtra("jk", jk)
-            intent.putExtra("hobi", hobi)
-            intent.putExtra("crispExtra", crispExtra)
-            intent.putExtra("crispAgree", crispAgree)
-            intent.putExtra("crispCons", crispCons)
-            intent.putExtra("crispNeuro", crispNeuro)
-            intent.putExtra("crispOpen", totalOpen)
-            intent.putExtra("baru", baru)
-            startActivity(intent)
+                //print("button oke")
+                Log.d("tes variable", kat)
+
+                val intent = Intent(this, HasilActivity::class.java)
+                intent.putExtra("jk", jk)
+                intent.putExtra("hobi", hobi)
+                intent.putExtra("crispExtra", crispExtra)
+                intent.putExtra("crispAgree", crispAgree)
+                intent.putExtra("crispCons", crispCons)
+                intent.putExtra("crispNeuro", crispNeuro)
+                intent.putExtra("crispOpen", totalOpen)
+                intent.putExtra("kategori", kat)
+                startActivity(intent)
 
 
-        }
+            }
+            }
+
+
     }
 }

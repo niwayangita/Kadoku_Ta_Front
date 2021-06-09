@@ -122,20 +122,44 @@ class ConscientiousnessActivity : AppCompatActivity() {
 
         val btnNext = findViewById<Button>(R.id.buttonNextNeuro)
 
-        btnNext.setOnClickListener{
-            var totalCons = religius+C1+C2+C3+C4+C5+C6+C7
-            Toast.makeText(applicationContext, totalCons.toString(),
-                    Toast.LENGTH_SHORT).show()
+        btnNext.setOnClickListener {
+            if (radioC1.checkedRadioButtonId == -1) {
+                Toast.makeText(getApplicationContext(), "Nomor 1 belum diisi", Toast.LENGTH_SHORT)
+                    .show();
+            } else if (radioC2.checkedRadioButtonId == -1) {
+                Toast.makeText(getApplicationContext(), "Nomor 2 belum diisi", Toast.LENGTH_SHORT)
+                    .show();
+            } else if (radioC3.checkedRadioButtonId == -1) {
+                Toast.makeText(getApplicationContext(), "Nomor 3 belum diisi", Toast.LENGTH_SHORT)
+                    .show();
+            } else if (radioC4.checkedRadioButtonId == -1) {
+                Toast.makeText(getApplicationContext(), "Nomor 4 belum diisi", Toast.LENGTH_SHORT)
+                    .show();
+            } else if (radioC5.checkedRadioButtonId == -1) {
+                Toast.makeText(getApplicationContext(), "Nomor 5 belum diisi", Toast.LENGTH_SHORT)
+                    .show();
+            } else if (radioC6.checkedRadioButtonId == -1) {
+                Toast.makeText(getApplicationContext(), "Nomor 6 belum diisi", Toast.LENGTH_SHORT)
+                    .show();
+            } else if (radioC7.checkedRadioButtonId == -1) {
+                Toast.makeText(getApplicationContext(), "Nomor 7 belum diisi", Toast.LENGTH_SHORT)
+                    .show();
+            } else {
+                var totalCons = religius + C1 + C2 + C3 + C4 + C5 + C6 + C7
+                Toast.makeText(
+                    applicationContext, totalCons.toString(),
+                    Toast.LENGTH_SHORT
+                ).show()
 
-            val intent = Intent(this, NeuroticismActivity::class.java)
-            intent.putExtra("jk", jk)
-            intent.putExtra("hobi", hobi)
-            intent.putExtra("crispExtra", crispExtra)
-            intent.putExtra("crispAgree", crispAgree)
-            intent.putExtra("crispCons", totalCons)
-            startActivity(intent)
+                val intent = Intent(this, NeuroticismActivity::class.java)
+                intent.putExtra("jk", jk)
+                intent.putExtra("hobi", hobi)
+                intent.putExtra("crispExtra", crispExtra)
+                intent.putExtra("crispAgree", crispAgree)
+                intent.putExtra("crispCons", totalCons)
+                startActivity(intent)
+            }
         }
-
 
     }
 }

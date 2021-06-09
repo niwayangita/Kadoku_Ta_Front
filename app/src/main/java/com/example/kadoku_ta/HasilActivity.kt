@@ -26,7 +26,7 @@ class HasilActivity : AppCompatActivity() {
         val crispCons = intent.getIntExtra("crispCons",0)
         val crispNeuro = intent.getIntExtra("crispNeuro",0)
         val crispOpen = intent.getIntExtra("crispOpen",0)
-        val baru = intent.getStringExtra("baru")
+        val kategori = intent.getStringExtra("kategori")
 
         val extra = findViewById<TextView>(R.id.textViewExtra)
         extra.text = "Extraversion: " + crispExtra.toString()
@@ -213,6 +213,6 @@ class HasilActivity : AppCompatActivity() {
         tampilOpenRendah.text = dk_rendahO.toString()
         tampilOpenSedang.text = dk_sedangO.toString()
         tampilOpenTinggi.text = dk_tinggiO.toString()
-        cek.text = baru
+        cek.text = kategori.toString()
     }
 }

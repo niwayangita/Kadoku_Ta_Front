@@ -46,7 +46,7 @@ class RekomendasiActivity : AppCompatActivity() {
 //            }
 
             //startActivity<ExtraversionActivity>(JenisKelamin to JenisKelamin)
-            val intent = Intent(this, TermActivity::class.java)
+            val intent = Intent(this, ExtraversionActivity::class.java)
             intent.putExtra("jk", JenisKelamin)
             intent.putExtra("hobi", Hobi)
             startActivity(intent)

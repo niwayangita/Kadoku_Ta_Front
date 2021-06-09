@@ -138,16 +138,50 @@ class ExtraversionActivity : AppCompatActivity() {
         val btnNext = findViewById<Button>(R.id.buttonNextCons)
 
         btnNext.setOnClickListener{
-            var totalExtra = E1+E2+E3+E4+E5+E6+E7+E8
+            if(radioE1.checkedRadioButtonId ==-1){
+                Toast.makeText(getApplicationContext(), "Nomor 1 belum diisi", Toast.LENGTH_SHORT).show();
+            }
+
+            else if(radioE2.checkedRadioButtonId ==-1) {
+                Toast.makeText(getApplicationContext(), "Nomor 2 belum diisi", Toast.LENGTH_SHORT)
+                    .show();
+            }
+
+            else if(radioE3.checkedRadioButtonId ==-1){
+                Toast.makeText(getApplicationContext(), "Nomor 3 belum diisi", Toast.LENGTH_SHORT).show();
+            }
+
+            else if(radioE4.checkedRadioButtonId ==-1){
+                Toast.makeText(getApplicationContext(), "Nomor 4 belum diisi", Toast.LENGTH_SHORT).show();
+            }
+
+            else if(radioE5.checkedRadioButtonId ==-1){
+                Toast.makeText(getApplicationContext(), "Nomor 5 belum diisi", Toast.LENGTH_SHORT).show();
+            }
+
+            else if(radioE6.checkedRadioButtonId ==-1){
+                Toast.makeText(getApplicationContext(), "Nomor 6 belum diisi", Toast.LENGTH_SHORT).show();
+            }
+
+            else if(radioE7.checkedRadioButtonId ==-1){
+                Toast.makeText(getApplicationContext(), "Nomor 7 belum diisi", Toast.LENGTH_SHORT).show();
+            }
+
+            else if(radioE8.checkedRadioButtonId ==-1){
+                Toast.makeText(getApplicationContext(), "Nomor 8 belum diisi", Toast.LENGTH_SHORT).show();
+            }
+
+            else {
+                var totalExtra = E1 + E2 + E3 + E4 + E5 + E6 + E7 + E8
 //            Toast.makeText(applicationContext, totalExtra.toString(),
 //                    Toast.LENGTH_SHORT).show()
 
-            val intent = Intent(this, AgreeablenessActivity::class.java)
-            intent.putExtra("jk", jk)
-            intent.putExtra("hobi", hobi)
-            intent.putExtra("crispExtra", totalExtra)
-            startActivity(intent)
-
+                val intent = Intent(this, AgreeablenessActivity::class.java)
+                intent.putExtra("jk", jk)
+                intent.putExtra("hobi", hobi)
+                intent.putExtra("crispExtra", totalExtra)
+                startActivity(intent)
+            }
         }
     }
 }

@@ -5,11 +5,37 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
+
+
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="40dp"
         tools:context=".ConscientiousnessActivity">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="100dp"
+            android:background="@drawable/box"
+            tools:ignore="MissingConstraints">
+
+            <TextView
+                android:id="@+id/textView17"
+                android:layout_width="325dp"
+                android:layout_height="81dp"
+                android:layout_alignParentStart="true"
+                android:layout_alignParentTop="true"
+                android:layout_alignParentEnd="true"
+                android:layout_alignParentBottom="true"
+                android:layout_marginStart="1dp"
+                android:layout_marginTop="6dp"
+                android:layout_marginEnd="0dp"
+                android:layout_marginBottom="7dp"
+                android:gravity="center"
+                android:text="Seluruh pertanyaan yang berhubungan dengan kepribadian hanya digunakan pada aplikasi ini. Sehingga tidak dapat digunakan sebagai tolak ukur dalam kehidupan sehari-hari"
+                android:textColor="@color/white"
+                android:textStyle="bold" />
+        </RelativeLayout>
 
         <TextView
             android:id="@+id/textView9"
@@ -22,17 +48,17 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.015" />
+            app:layout_constraintVertical_bias="0.110000014" />
 
         <TextView
             android:id="@+id/textView13"
             android:layout_width="300dp"
-            android:layout_height="35dp"
+            android:layout_height="25dp"
             android:layout_marginTop="20dp"
             android:layout_weight="1"
             android:background="#FFFFFF"
-            android:gravity="center"
-            android:text="Dia adalah pribadi yang mudah Gelisah"
+            android:gravity="left"
+            android:text="1. Dia adalah pribadi yang mudah Gelisah"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/textView9" />
@@ -43,7 +69,6 @@
             android:layout_height="55dp"
             android:layout_marginTop="50dp"
             android:orientation="horizontal"
-            android:checkedButton="@+id/radioNe14"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -96,11 +121,11 @@
         <TextView
             android:id="@+id/textView14"
             android:layout_width="300dp"
-            android:layout_height="35dp"
+            android:layout_height="30dp"
             android:layout_marginTop="20dp"
             android:layout_weight="1"
-            android:gravity="center"
-            android:text="Dia adalah orang yang mudah marah"
+            android:gravity="left"
+            android:text="2. Dia adalah orang yang mudah marah"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/radioGroupN1" />
@@ -110,7 +135,6 @@
             android:layout_width="300dp"
             android:layout_height="55dp"
             android:orientation="horizontal"
-            android:checkedButton="@+id/radioNe24"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.514"
@@ -164,11 +188,11 @@
         <TextView
             android:id="@+id/textView16"
             android:layout_width="300dp"
-            android:layout_height="30dp"
+            android:layout_height="35dp"
             android:layout_marginTop="20dp"
             android:layout_weight="1"
-            android:gravity="center"
-            android:text="Dia adalah orang yang memiliki tingkat stress tinggi"
+            android:gravity="left"
+            android:text="3. Dia adalah orang yang memiliki tingkat stress tinggi"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.541"
             app:layout_constraintStart_toStartOf="parent"
@@ -179,7 +203,6 @@
             android:layout_width="300dp"
             android:layout_height="55dp"
             android:orientation="horizontal"
-            android:checkedButton="@+id/radioNe34"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -233,11 +256,11 @@
         <TextView
             android:id="@+id/textView18"
             android:layout_width="300dp"
-            android:layout_height="35dp"
+            android:layout_height="30dp"
             android:layout_marginTop="20dp"
             android:layout_weight="1"
-            android:gravity="center"
-            android:text="Dia adalah orang yang pemalu"
+            android:gravity="left"
+            android:text="4. Dia adalah orang yang pemalu"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/radioGroupN3" />
@@ -247,7 +270,6 @@
             android:layout_width="300dp"
             android:layout_height="55dp"
             android:orientation="horizontal"
-            android:checkedButton="@+id/radioNe44"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -301,11 +323,11 @@
         <TextView
             android:id="@+id/textView19"
             android:layout_width="300dp"
-            android:layout_height="35dp"
+            android:layout_height="30dp"
             android:layout_marginTop="20dp"
             android:layout_weight="1"
-            android:gravity="center"
-            android:text="Dia adalah orang yang rapuh"
+            android:gravity="left"
+            android:text="5. Dia adalah orang yang rapuh"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/radioGroupN4" />
@@ -316,7 +338,6 @@
             android:layout_height="55dp"
             android:layout_marginTop="35dp"
             android:orientation="horizontal"
-            android:checkedButton="@+id/radioNe54"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.504"
@@ -371,11 +392,11 @@
         <TextView
             android:id="@+id/textView20"
             android:layout_width="300dp"
-            android:layout_height="35dp"
+            android:layout_height="30dp"
             android:layout_marginTop="20dp"
             android:layout_weight="1"
-            android:gravity="center"
-            android:text="Dia adalah orang yang mudah gugup"
+            android:gravity="left"
+            android:text="6. Dia adalah orang yang mudah gugup"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/radioGroupN5" />
@@ -386,7 +407,6 @@
             android:layout_height="55dp"
             android:layout_marginTop="35dp"
             android:orientation="horizontal"
-            android:checkedButton="@+id/radioNe64"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.504"
@@ -441,11 +461,11 @@
         <TextView
             android:id="@+id/textView21"
             android:layout_width="300dp"
-            android:layout_height="35dp"
+            android:layout_height="30dp"
             android:layout_marginTop="20dp"
             android:layout_weight="1"
-            android:gravity="center"
-            android:text="Dia orang yang mudah menyerah"
+            android:gravity="left"
+            android:text="7. Dia orang yang mudah menyerah"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/radioGroupN6" />
@@ -456,7 +476,6 @@
             android:layout_height="55dp"
             android:layout_marginTop="35dp"
             android:orientation="horizontal"
-            android:checkedButton="@+id/radioNe74"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.504"
@@ -515,8 +534,8 @@
             android:layout_height="35dp"
             android:layout_marginTop="20dp"
             android:layout_weight="1"
-            android:gravity="center"
-            android:text="Dia sering mengalami perubahan mood cukup drastis"
+            android:gravity="left"
+            android:text="8. Dia sering mengalami perubahan mood cukup drastis"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toBottomOf="@+id/radioGroupN7" />
@@ -527,7 +546,6 @@
             android:layout_height="55dp"
             android:layout_marginTop="35dp"
             android:orientation="horizontal"
-            android:checkedButton="@+id/radioNe84"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.504"

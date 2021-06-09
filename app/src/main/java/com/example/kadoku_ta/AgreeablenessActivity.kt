@@ -135,21 +135,52 @@ class AgreeablenessActivity : AppCompatActivity() {
 
         val btnNext = findViewById<Button>(R.id.buttonNextCons)
 
+
+
         btnNext.setOnClickListener{
-            var totalAgree = A1+A2+A3+A4+A5+A6+A7+A8
+            if(radioA1.checkedRadioButtonId ==-1){
+                Toast.makeText(getApplicationContext(), "Nomor 1 belum diisi", Toast.LENGTH_SHORT).show();
+            }
+
+            else if(radioA2.checkedRadioButtonId ==-1) {
+                Toast.makeText(getApplicationContext(), "Nomor 2 belum diisi", Toast.LENGTH_SHORT)
+                    .show();
+            }
+
+            else if(radioA3.checkedRadioButtonId ==-1){
+                Toast.makeText(getApplicationContext(), "Nomor 3 belum diisi", Toast.LENGTH_SHORT).show();
+            }
+
+            else if(radioA4.checkedRadioButtonId ==-1){
+                Toast.makeText(getApplicationContext(), "Nomor 4 belum diisi", Toast.LENGTH_SHORT).show();
+            }
+
+            else if(radioA5.checkedRadioButtonId ==-1){
+                Toast.makeText(getApplicationContext(), "Nomor 5 belum diisi", Toast.LENGTH_SHORT).show();
+            }
+
+            else if(radioA6.checkedRadioButtonId ==-1){
+                Toast.makeText(getApplicationContext(), "Nomor 6 belum diisi", Toast.LENGTH_SHORT).show();
+            }
+
+            else if(radioA7.checkedRadioButtonId ==-1){
+                Toast.makeText(getApplicationContext(), "Nomor 7 belum diisi", Toast.LENGTH_SHORT).show();
+            }
+
+            else {
+                var totalAgree = A1 + A2 + A3 + A4 + A5 + A6 + A7 + A8
 //            Toast.makeText(applicationContext, totalAgree.toString(),
 //                    Toast.LENGTH_SHORT).show()
-            //kirim data ke intent cons
-            val intent = Intent(this, ConscientiousnessActivity::class.java)
-            intent.putExtra("jk", jk)
-            intent.putExtra("hobi", hobi)
-            intent.putExtra("religius", A6)
-            intent.putExtra("crispExtra", crispExtra)
-            intent.putExtra("crispAgree", totalAgree)
-            startActivity(intent)
+                //kirim data ke intent cons
+                val intent = Intent(this, ConscientiousnessActivity::class.java)
+                intent.putExtra("jk", jk)
+                intent.putExtra("hobi", hobi)
+                intent.putExtra("religius", A6)
+                intent.putExtra("crispExtra", crispExtra)
+                intent.putExtra("crispAgree", totalAgree)
+                startActivity(intent)
 
-            
-
+            }
         }
     }
 }
