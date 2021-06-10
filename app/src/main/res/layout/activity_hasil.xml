@@ -1,124 +1,120 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".HasilActivity">
+    android:layout_height="match_parent">
 
-    <TextView
-        android:id="@+id/textViewExtra"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="88dp"
-        android:text="TextView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.172"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".HasilActivity">
 
-    <TextView
-        android:id="@+id/textViewAgree"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:text="TextView"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.172"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewExtra"
-        app:layout_constraintVertical_bias="0.013" />
+        <TextView
+            android:id="@+id/textView9"
+            android:layout_width="312dp"
+            android:layout_height="135dp"
+            android:fontFamily="@font/roboto_black"
+            android:text="Hasil Rekomendasi Kado"
+            android:textSize="36sp"
+            app:layout_constraintBottom_toTopOf="@+id/relativeLayout"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.494"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.755" />
 
-    <TextView
-        android:id="@+id/textViewCons"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:text="TextView"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.172"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewExtra"
-        app:layout_constraintVertical_bias="0.101" />
+        <RelativeLayout
+            android:id="@+id/relativeLayout"
+            android:layout_width="341dp"
+            android:layout_height="135dp"
+            android:background="@drawable/hasil_box"
+            tools:ignore="MissingConstraints"
+            tools:layout_editor_absoluteX="34dp"
+            tools:layout_editor_absoluteY="221dp">
 
-    <TextView
-        android:id="@+id/textViewNeuro"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:text="TextView"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.172"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewExtra"
-        app:layout_constraintVertical_bias="0.192" />
+            <TextView
+                android:id="@+id/textView17"
+                android:layout_width="match_parent"
+                android:layout_height="25dp"
+                android:background="@drawable/box"
+                android:fontFamily="@font/roboto_black"
+                android:gravity="center"
+                android:text="Karakteristik Penerima Kado"
+                android:textColor="@color/white"
+                android:textSize="18sp"
+                android:textStyle="bold"
+                tools:layout_editor_absoluteX="16dp"
+                tools:layout_editor_absoluteY="194dp" />
 
-    <TextView
-        android:id="@+id/textViewOpen"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:text="TextView"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.172"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewExtra"
-        app:layout_constraintVertical_bias="0.28" />
+            <TextView
+                android:id="@+id/textViewJK"
+                android:layout_width="236dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/textView17"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="22dp"
+                android:layout_marginTop="3dp"
+                android:fontFamily="sans-serif"
+                android:gravity="left"
+                android:text="Jenis Kelamin: "
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                tools:layout_editor_absoluteX="16dp"
+                tools:layout_editor_absoluteY="194dp" />
 
-    <TextView
-        android:id="@+id/textViewRendah"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:text="TextView"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.172"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewExtra"
-        app:layout_constraintVertical_bias="0.435" />
+            <TextView
+                android:id="@+id/textViewMomen"
+                android:layout_width="236dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/textViewJK"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="22dp"
+                android:layout_marginTop="3dp"
+                android:fontFamily="sans-serif"
+                android:gravity="left"
+                android:text="Momen: "
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                tools:layout_editor_absoluteX="16dp"
+                tools:layout_editor_absoluteY="194dp" />
 
-    <TextView
-        android:id="@+id/textViewSedang"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:text="TextView"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.172"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewExtra"
-        app:layout_constraintVertical_bias="0.485" />
+            <TextView
+                android:id="@+id/textViewUsia"
+                android:layout_width="236dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/textViewMomen"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="22dp"
+                android:layout_marginTop="3dp"
+                android:fontFamily="sans-serif"
+                android:gravity="left"
+                android:text="Usia: "
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                tools:layout_editor_absoluteX="16dp"
+                tools:layout_editor_absoluteY="194dp" />
 
-    <TextView
-        android:id="@+id/textViewTinggi"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="24dp"
-        android:text="TextView"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.172"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewExtra"
-        app:layout_constraintVertical_bias="0.537" />
+            <TextView
+                android:id="@+id/textViewKarakter"
+                android:layout_width="236dp"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/textViewUsia"
+                android:layout_alignParentStart="true"
+                android:layout_marginStart="22dp"
+                android:layout_marginTop="3dp"
+                android:fontFamily="sans-serif"
+                android:gravity="left"
+                android:text="Karakter: "
+                android:textColor="@color/white"
+                android:textSize="14sp"
+                android:textStyle="bold"
+                tools:layout_editor_absoluteX="16dp"
+                tools:layout_editor_absoluteY="194dp" />
 
-    <TextView
-        android:id="@+id/textView15"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="66dp"
-        android:layout_marginTop="11dp"
-        android:layout_marginEnd="288dp"
-        android:layout_marginBottom="238dp"
-        android:text="TextView"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/textViewTinggi" />
-</androidx.constraintlayout.widget.ConstraintLayout>
+        </RelativeLayout>
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>

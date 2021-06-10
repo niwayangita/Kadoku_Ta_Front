@@ -25,6 +25,10 @@ class ExtraversionActivity : AppCompatActivity() {
         //terima intent dari filter rekomendasi
         val jk = intent.getStringExtra("jk").toString()
         val hobi = intent.getStringExtra("hobi").toString()
+        val momen = intent.getStringExtra("momen").toString()
+        val hargaMin = intent.getStringExtra("hargaMin").toString()
+        val hargaMax = intent.getStringExtra("hargaMax").toString()
+        val umur = intent.getStringExtra("umur").toString()
 
         //deklarasi variabel radiogrup extraversion
         val radioE1 = findViewById<RadioGroup>(R.id.radioGroupE1)
@@ -179,6 +183,10 @@ class ExtraversionActivity : AppCompatActivity() {
                 val intent = Intent(this, AgreeablenessActivity::class.java)
                 intent.putExtra("jk", jk)
                 intent.putExtra("hobi", hobi)
+                intent.putExtra("momen", momen)
+                intent.putExtra("hargaMin", hargaMin)
+                intent.putExtra("hargaMax", hargaMax)
+                intent.putExtra("umur", umur)
                 intent.putExtra("crispExtra", totalExtra)
                 startActivity(intent)
             }

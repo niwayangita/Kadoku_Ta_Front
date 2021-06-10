@@ -4,11 +4,16 @@ import android.content.Intent
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.widget.*
+import org.w3c.dom.Text
 
-class RekomendasiActivity : AppCompatActivity() {
+ class RekomendasiActivity : AppCompatActivity() {
     companion object{
         var JenisKelamin = ""
         var Hobi = ""
+        var Momen= ""
+        var Umur = ""
+        var HargaBawah = ""
+        var HargaAtas = ""
     }
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -18,8 +23,16 @@ class RekomendasiActivity : AppCompatActivity() {
         val btnRekom = findViewById<Button>(R.id.buttonRekom)
         val radioJK = findViewById<RadioGroup>(R.id.radioGroupJK)
         val spinnerHobi = findViewById<Spinner>(R.id.spinnerHobi)
+        val spinnerMomen = findViewById<Spinner>(R.id.spinnerMomen)
+        val spinnerUmur = findViewById<Spinner>(R.id.spinnerUmur)
+        val hargaMin = findViewById(R.id.editTextMin) as EditText
+        val hargaMax = findViewById(R.id.editTextMaks) as EditText
 
         Hobi= spinnerHobi.selectedItem.toString()
+        Momen = spinnerMomen.selectedItem.toString()
+        Umur = spinnerUmur.selectedItem.toString()
+        HargaBawah = hargaMin.text.toString()
+        HargaAtas = hargaMax.text.toString()
 
         radioJK.setOnCheckedChangeListener{group, checkedId ->
             JenisKelamin= when(checkedId){
@@ -49,6 +62,10 @@ class RekomendasiActivity : AppCompatActivity() {
             val intent = Intent(this, ExtraversionActivity::class.java)
             intent.putExtra("jk", JenisKelamin)
             intent.putExtra("hobi", Hobi)
+            intent.putExtra("momen", Momen)
+            intent.putExtra("hargaMin", HargaBawah)
+            intent.putExtra("hargaMax", HargaAtas)
+            intent.putExtra("umur", Umur)
             startActivity(intent)
 
 //            Toast.makeText(applicationContext, Hobi,
