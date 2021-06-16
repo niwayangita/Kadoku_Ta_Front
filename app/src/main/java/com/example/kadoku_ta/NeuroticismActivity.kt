@@ -185,7 +185,6 @@ class NeuroticismActivity : AppCompatActivity() {
                 intent.putExtra("crispCons", crispCons)
                 intent.putExtra("crispNeuro", totalNeuro)
                 startActivity(intent)
-
             }
         }
     }

@@ -8,15 +8,21 @@
     </string-array>
 
     <string-array name="hobi">
-        <item>Memasak</item>
-        <item>Menyanyi</item>
-        <item>Bermain Musik</item>
+        <item>Terbuka</item>
+        <item>Suka Berinteraksi</item>
+        <item>Penyayang</item>
+        <item>Teratur</item>
+        <item>Mudah Gelisah</item>
     </string-array>
 
     <string-array name="rentang_umur">
-        <item>Remaja</item>
-        <item>Dewasa</item>
-        <item>Lansia</item>
+        <item>Remaja Awal (12-16 tahun)</item>
+        <item>Remaja Akhir (17-25 tahun) </item>
+        <item>Dewasa Awal (26-35 tahun)</item>
+        <item>Dewasa Akhir (36-45 tahun)</item>
+        <item>Lansia Awal (46-55 tahun)</item>
+        <item>Lansia Akhir (56-65 tahun)</item>
+        <item>Manula (65 tahun ke atas)</item>
     </string-array>
     <string name="title_activity_extraversion">ExtraversionActivity</string>
     <!-- Strings used for fragments for navigation -->

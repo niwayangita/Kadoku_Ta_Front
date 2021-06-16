@@ -7,13 +7,15 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent"
+        android:layout_height="wrap_content"
+        android:padding="40dp"
         tools:context=".HasilActivity">
 
         <TextView
             android:id="@+id/textView9"
             android:layout_width="312dp"
             android:layout_height="135dp"
+            android:layout_marginTop="25dp"
             android:fontFamily="@font/roboto_black"
             android:text="Hasil Rekomendasi Kado"
             android:textSize="36sp"
@@ -28,10 +30,14 @@
             android:id="@+id/relativeLayout"
             android:layout_width="341dp"
             android:layout_height="135dp"
+            android:layout_marginTop="100dp"
             android:background="@drawable/hasil_box"
-            tools:ignore="MissingConstraints"
-            tools:layout_editor_absoluteX="34dp"
-            tools:layout_editor_absoluteY="221dp">
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="1.0"
+            tools:ignore="MissingConstraints">
 
             <TextView
                 android:id="@+id/textView17"
@@ -116,5 +122,57 @@
                 tools:layout_editor_absoluteY="194dp" />
 
         </RelativeLayout>
+
+        <Button
+            android:id="@+id/buttonRekom"
+            android:layout_width="341dp"
+            android:layout_height="59dp"
+            android:layout_marginTop="20dp"
+            android:text="Lihat hasil rekomendasi"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/relativeLayout"
+            app:layout_constraintVertical_bias="0.0" />
+
+        <TextView
+            android:id="@+id/textViewJudul"
+            android:layout_width="336dp"
+            android:layout_height="43dp"
+            android:layout_marginTop="20dp"
+            android:text="Hasil Rekomendasi"
+            android:textSize="34sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            android:visibility="invisible"
+            app:layout_constraintTop_toBottomOf="@+id/buttonRekom" />
+
+        <TextView
+            android:id="@+id/textViewHasil"
+            android:layout_width="336dp"
+            android:layout_height="34dp"
+            android:layout_marginTop="20dp"
+            android:text="Hasil"
+            android:textSize="20sp"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewJudul" />
+
+
+        <TextView
+            android:id="@+id/textViewHasil2"
+            android:layout_width="266dp"
+            android:layout_height="32dp"
+            android:layout_marginTop="10dp"
+            android:text="-Jenis"
+            android:textSize="20sp"
+            android:visibility="invisible"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.7"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewHasil" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </ScrollView>

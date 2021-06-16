@@ -29,10 +29,33 @@ import org.w3c.dom.Text
         val hargaMax = findViewById(R.id.editTextMaks) as EditText
 
         Hobi= spinnerHobi.selectedItem.toString()
-        Momen = spinnerMomen.selectedItem.toString()
+        var momenC = spinnerMomen.selectedItem.toString()
         Umur = spinnerUmur.selectedItem.toString()
         HargaBawah = hargaMin.text.toString()
         HargaAtas = hargaMax.text.toString()
+
+        if(momenC == "Remaja Awal (12-16 tahun)"){
+            Momen = "Remaja Awal"
+        }
+        else if(momenC == "Remaja Akhir (17-25 tahun)"){
+            Momen = "Remaja Akhir"
+        }
+        else if(momenC == "Dewasa Awal (26-35 tahun)"){
+            Momen = "Dewasa Awal"
+        }
+        else if(momenC == "Dewasa Akhir (36-45 tahun)"){
+            Momen = "Dewasa Akhir"
+        }
+        else if(momenC == "Lansia Awal (46-55 tahun)"){
+            Momen = "Lansia Awal"
+        }
+        else if(momenC == "Lansia Akhir (56-65 tahun)"){
+            Momen = "Lansia Akhir"
+        }
+        else if(momenC == "Manula (65 tahun ke atas)"){
+            Momen = "Manula"
+        }
+
 
         radioJK.setOnCheckedChangeListener{group, checkedId ->
             JenisKelamin= when(checkedId){
@@ -68,8 +91,8 @@ import org.w3c.dom.Text
             intent.putExtra("umur", Umur)
             startActivity(intent)
 
-//            Toast.makeText(applicationContext, Hobi,
-//                    Toast.LENGTH_SHORT).show()
+            Toast.makeText(applicationContext, HargaBawah,
+                    Toast.LENGTH_SHORT).show()
         }
 
 //        btnRekom.setOnClickListener{

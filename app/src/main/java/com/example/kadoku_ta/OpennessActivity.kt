@@ -196,41 +196,41 @@ class OpennessActivity : AppCompatActivity() {
                 var baru = ""
                 var kat = ""
 
-                var stringRequest = object: StringRequest(
-                    Request.Method.POST, url,
-                    Response.Listener<String>{ response->
-                        try {
-                            val object_ = JSONObject(response)
-                            kat = object_.getString("kategori")
-//                            val ambil = jsonArray.getString("kategori")//kurung kurawal json array
-                            //Log.d("test", kat)
-//                            Log.d("yow", "masuk try yo")
-                        }
-                        catch (e: Exception) { // caught while parsing the response
-                            e.printStackTrace()
-                            print("gagal")
-                            Log.e("bakaka", "gagal wkwk")
-                        }
-
-                    },
-                    Response.ErrorListener {} )
-                {
-                    //input data Mahasiswa ke database
-                    override fun getParams(): Map<String, String> {
-                        val params = HashMap<String, String>()
-                        params.put("crispExtra", crispExtra.toString())
-                        params.put("crispAgree", crispAgree.toString())
-                        params.put("crispCons", crispCons.toString())
-                        params.put("crispNeuro", crispNeuro.toString())
-                        params.put("crispOpen", totalOpen.toString())
-                        return params
-                    }
-                }
-                //eksekusi untuk melakukan insert database
-                q.add(stringRequest)
-
-                //print("button oke")
-                Log.d("tes variable", kat)
+//                var stringRequest = object: StringRequest(
+//                    Request.Method.POST, url,
+//                    Response.Listener<String>{ response->
+//                        try {
+//                            val object_ = JSONObject(response)
+//                            kat = object_.getString("kategori")
+////                            val ambil = jsonArray.getString("kategori")//kurung kurawal json array
+//                            //Log.d("test", kat)
+////                            Log.d("yow", "masuk try yo")
+//                        }
+//                        catch (e: Exception) { // caught while parsing the response
+//                            e.printStackTrace()
+//                            print("gagal")
+//                            Log.e("bakaka", "gagal wkwk")
+//                        }
+//
+//                    },
+//                    Response.ErrorListener {} )
+//                {
+//                    //input data Mahasiswa ke database
+//                    override fun getParams(): Map<String, String> {
+//                        val params = HashMap<String, String>()
+//                        params.put("crispExtra", crispExtra.toString())
+//                        params.put("crispAgree", crispAgree.toString())
+//                        params.put("crispCons", crispCons.toString())
+//                        params.put("crispNeuro", crispNeuro.toString())
+//                        params.put("crispOpen", totalOpen.toString())
+//                        return params
+//                    }
+//                }
+//                //eksekusi untuk melakukan insert database
+//                q.add(stringRequest)
+//
+//                //print("button oke")
+//                Log.d("tes variable", kat)
 
                 val intent = Intent(this, HasilActivity::class.java)
                 intent.putExtra("jk", jk)
